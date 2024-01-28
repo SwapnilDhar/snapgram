@@ -1,7 +1,7 @@
 import { useToast } from "@/components/ui/use-toast";
 import Loader from "@/components/shared/Loader";
 import { useGetUsers } from "@/lib/react-query/queriesAndMutations";
-import UserCard from "@/components/shared/Usercard";
+import UserCard from "@/components/shared/UserCard";
 
 const AllUsers = () => {
   const { toast } = useToast();

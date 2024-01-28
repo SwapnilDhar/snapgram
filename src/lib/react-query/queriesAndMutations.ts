@@ -2,6 +2,7 @@ import { useQuery, useQueryClient, useInfiniteQuery, useMutation } from "@tansta
 import { createPost, createUserAccount, deletePost, deleteSavedPost, getCurrentUser, getInfinitePosts, getPostById, getRecentPosts, getUserById, getUsers, likePost, savePost, searchPosts, signInAccount, signOutAccount, updatePost, updateUser } from "../appwrite/api";
 import { INewPost, INewUser, IUpdatePost, IUpdateUser } from "@/types";
 import { QUERY_KEYS } from "./queryKeys";
+//@ts-nocheck
 
 export const useCreateUserAccount = () => {
 	return useMutation({
@@ -155,7 +156,7 @@ export const useCreatePost = () => {
 			}
 
 			// Use the $id of the last document as the cursor.
-			const lastId = lastPage.documents[lastPage?.documents.length - 1].$id;
+			const lastId = lastPage?.documents[lastPage?.documents.length - 1].$id;
 			return lastId;
 		}
 	})
